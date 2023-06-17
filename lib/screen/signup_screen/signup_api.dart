@@ -9,8 +9,12 @@ class SignUpApi {
   static Future registerUser(Map<String, dynamic>? body) async {
     try {
       String url = EndPointRes.signUp;
-      http.Response? response = await HttpService.postApi(
-          url: url, body: body, header: {'Content-Type': 'application/json'});
+      http.Response? response = await HttpService.postSignUpApi(
+        url: url,
+        body: body,
+        header: {'Content-Type': 'application/json'},
+      );
+      print(response!.body);
       if (response != null && response.statusCode == 200) {
         return signUpModelFromJson(response.body);
       }

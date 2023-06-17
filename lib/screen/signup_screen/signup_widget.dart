@@ -65,6 +65,11 @@ Widget textField() {
 Widget singUpButton() {
   return GetBuilder<SignUpController>(
     builder: (controller) => ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        shape: BeveledRectangleBorder(
+          borderRadius: BorderRadius.circular(7),
+        ),
+      ),
       onPressed: () => controller.navigateToBackScreen(),
       child: const Text(StringRes.singUp),
     ),

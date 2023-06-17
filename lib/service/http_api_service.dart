@@ -18,7 +18,28 @@ class HttpService {
     }
   }
 
-  static Future<http.Response?> postApi(
+  static Future<http.Response?> postSignUpApi(
+      {required String url,
+      Map<String, dynamic>? body,
+      Map<String, String>? header}) async {
+    try {
+      if (kDebugMode) {
+        print("URL===========>$url");
+      }
+      return await http.post(
+        Uri.parse(url),
+        body: jsonEncode(body),
+        headers: header,
+      );
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+      return null;
+    }
+  }
+
+  static Future<http.Response?> postLoginApi(
       {required String url,
       Map<String, dynamic>? body,
       Map<String, String>? header}) async {

@@ -25,7 +25,7 @@ class SignUpController extends GetxController {
     };
     signUpModel = await SignUpApi.registerUser(body);
     if (signUpModel != null && signUpModel!.status == 1) {
-      Get.to(LoginScreen());
+      Get.to(() => LoginScreen());
     }
   }
 }
