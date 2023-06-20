@@ -1,6 +1,5 @@
 // ignore_for_file: avoid_print
 
-import 'package:flutter/foundation.dart';
 import '../../model/login_model.dart';
 import '../../service/http_api_service.dart';
 import '../../utils/endpiont_res.dart';

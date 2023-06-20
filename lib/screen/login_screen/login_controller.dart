@@ -27,7 +27,7 @@ class LoginController extends GetxController {
 
     loginModel = await LoginApi.loginUser(body);
     if (loginModel != null && loginModel!.status == 1) {
-      Get.to(() => HomeScreen());
+      Get.to(() => const HomeScreen());
     }
   }
 }
